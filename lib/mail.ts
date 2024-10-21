@@ -21,7 +21,7 @@ export async function sendEmailverification(token: string,email:string) {
     >
       <p style="font-weight: bold; display: block;">Welcome to authi service</p>
       <p>
-        Click <a href="${`http://localhost:3000/new-verification?token=${token}`}" style="color: orange">here </a>to confirm
+        Click <a href="${`http://localhost:3000/newverification?token=${token}`}" style="color: orange">here </a>to confirm
         email.
       </p>
     </div>`,

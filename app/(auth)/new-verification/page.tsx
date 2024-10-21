@@ -1,14 +1,15 @@
-"use client";
 import NewVerificationFrom from "@/components/auth/New-Verification-Form";
 
-import React from "react";
+import React, { Suspense } from "react";
 
-const Page = () => {
+const NewVerificationPage = () => {
   return (
-    <>
-      <NewVerificationFrom />
-    </>
+    <div>
+      <Suspense>
+        <NewVerificationFrom />
+      </Suspense>
+    </div>
   );
 };
 
-export default Page;
+export default NewVerificationPage;
