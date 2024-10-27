@@ -25,8 +25,6 @@ export const createAccount = async (values: z.infer<typeof RegisterSchema>) => {
       return { error: "Use valid email address" };
     const existingUser = await getUserByEmail(email);
 
-    console.log(existingUser);
-
     if (existingUser) return { error: "Email already in use!" };
 
     const hashedPassword = await bcrypt.hash(password, 10);

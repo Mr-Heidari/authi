@@ -3,12 +3,12 @@ import authConfig from "@/auth.config";
 
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { db } from "@/lib/db";
-import {  getUserById } from "./data/user";
-
+import { getUserById } from "./data/user";
+import { UserRole } from "@prisma/client";
 export const { handlers, auth, signIn, signOut } = NextAuth({
-  pages:{
-    signIn:'/login',
-    error:'/error'
+  pages: {
+    signIn: "/login",
+    error: "/error",
   },
 
   callbacks: {
@@ -37,9 +37,11 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
         session.user.id = token.sub;
       }
 
-      if (token.role && session.user) session.user.role = token.role;
+      if (token.role && session.user) {
+        session.user.role = token.role as UserRole;
+      }
 
-      return session
+      return session;
     },
   },
 

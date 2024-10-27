@@ -92,7 +92,7 @@ const NewPasswordForm = () => {
         <div className="border-[3px] rounded-md p-4 border-gray-400 text-gray-800 mt-4 relative flex flex-col gap-2 ">
           <div className="flex flex-row">
             <CheckCircledIcon className="w-8 h-6 " />
-            <p>You'r password updated!.</p>
+            <p>{"You'r password updated!"}</p>
           </div>
           <p className="ml-2 flex flex-row gap-2">
             redirecting to login page

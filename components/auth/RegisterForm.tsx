@@ -27,7 +27,6 @@ const RegisterForm = () => {
   const {
     mutate: createAccount,
     isLoading: isCredentialSignUpLoading,
-    isSuccess,
     data,
   } = useCreateAccount();
 
