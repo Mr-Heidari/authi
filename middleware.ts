@@ -19,7 +19,7 @@ export default auth((req) => {
   const isAuthRoute = authRoutes.includes(nextUrl.pathname);
 
   if (isApiAuthRoute) return null;
-  console.log(isLoggedin)
+ 
   if (isAuthRoute) {
     if (isLoggedin) {
       return Response.redirect(new URL(login_redirect_route, nextUrl));
